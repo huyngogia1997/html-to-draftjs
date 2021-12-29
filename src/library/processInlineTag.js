@@ -28,6 +28,7 @@ export default function processInlineTag(
       const fontWeight = htmlElement.style.fontWeight;
       const textDecoration = htmlElement.style.textDecoration;
       const fontStyle = htmlElement.style.fontStyle;
+      const strokeDashoffset = htmlElement.style.strokeDashoffset;
       if (color) {
         style.add(`color-${color.replace(/ /g, '')}`);
       }
@@ -49,6 +50,10 @@ export default function processInlineTag(
       if(fontStyle === 'italic'){
           style.add(inlineTags.em)
       }
+
+      if(strokeDashoffset){
+        style.add(`strokeDashoffset-0`)
+    }
     }).toOrderedSet();
   }
   return inlineStyle;

@@ -32,6 +32,7 @@ function genFragment(
   inEntity: number,
   customChunkGenerator: ?CustomChunkGenerator,
 ): Object {
+  console.log("node.nodeName.toLowerCase()",node.nodeName.toLowerCase(),node.textContent);
   const nodeName = node.nodeName.toLowerCase();
 
   if (customChunkGenerator) {
