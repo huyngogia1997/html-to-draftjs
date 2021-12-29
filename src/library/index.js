@@ -143,7 +143,7 @@ function genFragment(
   if (!chunk) {
     chunk = getEmptyChunk();
   }
-
+  console.log("call processInlineTag",nodeName, node, inlineStyle);
   inlineStyle = processInlineTag(nodeName, node, inlineStyle);
 
   let child = node.firstChild;
@@ -169,6 +169,7 @@ function getChunkForHTML(html: string, customChunkGenerator: ?CustomChunkGenerat
 }
 
 export default function htmlToDraft(html: string, customChunkGenerator: ?CustomChunkGenerator): Object {
+  console.log("Version 1 htmlToDraft");
   const chunkData = getChunkForHTML(html, customChunkGenerator);
   if (chunkData) {
     const { chunk } = chunkData;
