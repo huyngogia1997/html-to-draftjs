@@ -155,6 +155,8 @@ function genFragment(
     const sibling = child.nextSibling;
     child = sibling;
   }
+  console.log(" { chunk }", { chunk });
+
   return { chunk };
 }
 
